@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		Employee
+	</title>
+</head>
+<body style="
+    color: #b93659;
+    background-color: #9e9e9e63;
+    color: #9a1919e8;
+    width: 800;
+    height: 800px;
+    width: 800px;
+    box-shadow: 0 0 20px 8px yellow;
+">
+	<script type="text/javascript">
+		function calc(form)
+		{
+			var sal= form.sal1.value;
+			var rent= form.rent1.value;
+			var hra= +rent + sal*0.1;
+			var pf= (12*sal)/100;
+			var tax;
+			if((sal*12) >250000)
+			{
+				tax= sal/20;
+			}
+			else if((sal*12)>500000)
+			{
+				tax= sal/5;
+			}
+			else
+			{
+				tax=0;
+			}
+			var gp= sal;
+			var ded=  +hra+ +pf+ +tax;
+			var net= sal-ded;
+			document.write("<br>Salary= "+sal);
+			document.write("<br>Rent= "+rent);
+			document.write("<br>Hra= "+hra);
+			document.write("<br>PF= "+pf);
+			document.write("<br>Tax= "+tax);
+			document.write("<br>Gross pay= "+gp);
+			document.write("<br>Deduction= "+ded);
+			document.write("<br>Net pay= "+net);
+		}
+	</script>
+	<h1 style="
+    box-shadow: inset 0 0 1px 2px black;
+    background-color: #b59ae4;
+    ">
+                    EMPLOYEE INFORMATION
+	</h1><br>
+	<form>
+	Name: <input type="text" name="na"><br>
+	Employee no:<input type="text" name="eno"><br>
+	Salary:<input type="text" name="sal1"><br>
+	Rent:<input type="text" name="rent1"><br>
+	<input type="button" name="cal" value="Calculate" onclick='calc(this.form)'>
+</form>
+</body>
+</html>
